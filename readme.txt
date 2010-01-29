@@ -12,7 +12,7 @@ and your team members.
 
 == Description ==
 
-Tabagile Scrum Board 0.1 (alpha version), is a simple scrum board that will help you, a Product Owner, to dealing with your stories, sprints and your team members.
+Tabagile Scrum Board 0.1 (alpha version), is a simple scrum board that will help you, a Product Owner, to deal with your stories, sprints and your team members.
 
 0.1 alpha features:
 
