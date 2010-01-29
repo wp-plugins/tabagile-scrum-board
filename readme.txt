@@ -48,7 +48,11 @@ Tabagile Scrum Board is a variant derived from Abstract Dimension's Todo List Pl
 
 == Screenshots ==
 
-1. screenshot-1.png
+1. stories-on-sprint.png
+2. product-backlog.png
+3. complete-tasks.png
+4. add-backlog.png
+5. roles-capabilities.png
 
 == Roles and Capabilities ==
 
