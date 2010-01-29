@@ -29,15 +29,14 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 global $table_prefix;
 $otd_tablename       = $table_prefix . 'tabagile';
-$otd_tablename_users = $table_prefix . 'tabagileusers';
+$otd_tablename_users = $table_prefix . 'users';
 $otd_message         = '';
 $otd_location        = get_settings('siteurl') . '/wp-admin/tools.php?page=' . otd_plugin_basename(__FILE__);
 $otd_option_location = get_settings('siteurl') . '/wp-admin/options-general.php?page=' . otd_plugin_basename(__FILE__);
 
-load_plugin_textdomain('otd',
-            'wp-content/plugins/' . dirname(otd_plugin_basename(__FILE__)) );
+load_plugin_textdomain('otd','wp-content/plugins/' . dirname(otd_plugin_basename(__FILE__)) );
 
-function otd_runInclude ()
+function otd_runinclude ()
 {
     $path = ABSPATH . WPINC;
     $incfile = $path . '/pluggable-functions.php';
@@ -56,12 +55,10 @@ function otd_runInclude ()
 }
 
 //run a task
+// if($_GET['otd_action'] == 'incoming'){
+// otd_incoming ($id=$_GET['id'], 2);
+// }
 
-/*
-if($_GET['otd_action'] == 'incoming'){
-otd_incoming ($id=$_GET['id'], 2);
-}
-*/
 
 if ( function_exists('add_action') )
 {
