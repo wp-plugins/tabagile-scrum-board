@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: maeka, rrsouzaf
-Donate link: http://example.com/
+Donate link: http://www.twitter.com/ricardonm/
 Tags: scrum, agile, management
 Requires at least: 2.0.2
 Tested up to: 2.1
-Stable tag: trunk
+Stable tag: 0.1
 
 A simple scrum board that helps you, as a Product Owner, to dealing with your stories, sprints 
 
