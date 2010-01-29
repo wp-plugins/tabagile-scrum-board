@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: maeka, rrsouzaf
+Contributors: maeka
 Donate link: http://www.twitter.com/ricardonm/
 Tags: scrum, agile, management
 Requires at least: 2.0.2
