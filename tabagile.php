@@ -1,13 +1,13 @@
 <?php
 /*
-Plugin Name: Scrum Board - based on Our Todo List plugin
+Plugin Name: Tabagile Scrum Board
 Plugin URI:
 Description: A simple scrum board that helps you in dealing with your stories, sprints and your team members. All members work as a team to manipulate the list under "Manage". A variant derived from AbstractDimension's Todo List Plugin.
-Version: 2.0
-Author: Wordpress By Examples
-Author URI: http://wordpress.byexamples.com
+Version: 0.1 (alpha)
+Author: Maeka
+Author URI: http://www.twitter.com/ricardonm
 
-Copyright 2009  Maeka  <http://ideia.tv>
+Copyright 2009  Maeka  <http://www.twitter.com/ricardonm>
 Copyright 2007  Wordpress By Examples  <http://wordpress.byexamples.com>
 Copyright 2006  Abstract Dimension  <http://abstractdimension.com>
 
@@ -28,8 +28,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 
 global $table_prefix;
-$otd_tablename       = $table_prefix . 'todolist';
-$otd_tablename_users = $table_prefix . 'users';
+$otd_tablename       = $table_prefix . 'tabagile';
+$otd_tablename_users = $table_prefix . 'tabagileusers';
 $otd_message         = '';
 $otd_location        = get_settings('siteurl') . '/wp-admin/tools.php?page=' . otd_plugin_basename(__FILE__);
 $otd_option_location = get_settings('siteurl') . '/wp-admin/options-general.php?page=' . otd_plugin_basename(__FILE__);
@@ -123,9 +123,6 @@ function otd_activate ()
   		ended_in datetime NOT NULL default '0000-00-00 00:00:00',
   		UNIQUE KEY id (id)
         );";
-
-
-
 
         require_once(ABSPATH . 'wp-admin/upgrade-functions.php');
         dbDelta($sql);
