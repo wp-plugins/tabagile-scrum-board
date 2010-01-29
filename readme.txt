@@ -17,7 +17,7 @@ Tabagile Scrum Board 0.1 (alpha version), is a simple scrum board that will help
 0.1 alpha features:
 
 1) All members work as a team to manipulate the list under "Manage". 
-2) Each member can see something what´s really important.
+2) Each member can see something what's really important.
 3) WordPress Roles and Capabilities are in sinc with Scrum players:
 4) You can insert entryes as Stories, Epics, Themes, Tasks or Project
 5) Tabagile Scrum Board permits you to maintain the relationships between the entryes. That is, 
