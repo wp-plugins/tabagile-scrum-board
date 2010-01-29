@@ -20,9 +20,7 @@ Tabagile Scrum Board 0.1 (alpha version), is a simple scrum board that will help
 2) Each member can see something what's really important.
 3) WordPress Roles and Capabilities are in sinc with Scrum players:
 4) You can insert entryes as Stories, Epics, Themes, Tasks or Project
-5) Tabagile Scrum Board permits you to maintain the relationships between the entryes. That is, 
-
-an Epic can be a parent category for a lot of stories, for example.
+5) Tabagile Scrum Board permits you to maintain the relationships between the entryes. That is, an Epic can be a parent category for a lot of stories, for example.
 6) Set the stories as "Not-ready" or "Ready" and submit them to sprint. Trac it all. 
 
 Next alpha release features:
