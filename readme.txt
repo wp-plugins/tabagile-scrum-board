@@ -1,108 +1,80 @@
-A simple scrum board that helps you, as a Product Owner, to dealing with your stories, sprints and your team members. 
+=== Plugin Name ===
+Contributors: maeka, rrsouzaf
+Donate link: http://example.com/
+Tags: scrum, agile, management
+Requires at least: 2.0.2
+Tested up to: 2.1
+Stable tag: trunk
 
-Features:
+A simple scrum board that helps you, as a Product Owner, to dealing with your stories, sprints and your team members.
+
+== Description ==
+
+Tabagile Scrum Board 0.1 (alpha version), is a simple scrum board that will help you, a Product Owner, to dealing with your stories, sprints and your team members.
+
+0.1 alpha features:
 
 1) All members work as a team to manipulate the list under "Manage". 
 2) Each member can see something what´s really important.
 3) WordPress Roles and Capabilities are in sinc with Scrum players:
-3.1) "subscriber" = Team Member
-3.2) "contributor" = Team Member
-3.3) "author" = Team Member
-3.4) "editor" = Scrum Master
-3.5) "administrator" = Product Owner
 4) You can insert entryes as Stories, Epics, Themes, Tasks or Project
 5) Tabagile Scrum Board permits you to maintain the relationships between the entryes. That is, an Epic can be a parent category for a lot of stories, for example.
 6) Set the stories as "Not-ready" or "Ready" and submit them to sprint. Trac it all. 
 
-Tabagile Scrum Board is a variant derived from Abstract Dimension's Todo List Plugin. - Version: 0.1 (alpha)
+Next alpha release features:
+
+1) Entries pagination and a "sort by" the table title names.
+2) View the entries according by the relationship beetween them(parents and children nodes).  
+3) Request for approvation using e-mail on changing the entry status.
+4) Visualize the graphs for "release burn-down", "sprint burn-down".
+5) Attach files and documents to the entryes    
+6) Setup the title table names that will be shown in the product backlog list   
 
 
+Tabagile Scrum Board is a variant derived from Abstract Dimension's Todo List Plugin.
 
 
-Campos da tabela do plugin ScrumBoard   		
+== Installation ==
 
+1. Upload `tabagile.php` to the `/wp-content/plugins/` directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Access the 'Tabagile Scrum Board' button on menu 'tools' in Wordpress 
 
-1) id bigint(20) NOT NULL auto_increment,
-   identificador numérico da entrada ( story, epic, theme )
-  		
-2) idParent int(11) default NULL,
-   identificador numérico da story/epic/theme pai, caso existir		
+== Frequently Asked Questions ==
 
-3) sprintNumber int(11) default NULL,
-   número do sprint em que a story será desenvolvida		
+== Screenshots ==
 
-4) points int(11) default NULL,
-   pontos estimados para a estória		
+1. screenshot-1.(png|jpg|jpeg|gif)
 
-5) author bigint(20) NOT NULL default '0',
-   criador da tarefa no sistema		
+== Changelog ==
 
-6) att bigint(4) NOT NULL default '0',
-   atual responsável pela tarefa	
+== Upgrade Notice ==
 
-7) targetActors bigint(20) NOT NULL default '0',
-   atores que vão se beneficiar da tarefa	
+== Roles and Capabilities ==
 
-8) tasktag bigint(4) NOT NULL default '0',
-   Indica se a entrada é uma story, um epic ou um theme	
-   0 = story
-   1 = epic
-   2 = theme	
+1) "subscriber" = Client (that user can sugest stories directly in the product backlog, trough a public interface)
+2) "contributor" = Team Member
+3) "author" = Team Member (that user can see your tasks in product backlog)
+4) "editor" = Scrum Master (can dealing with tasks and team members)
+5) "administrator" = Product Owner (can dealing with epics, stories, themes, projects and grant access for all team members)
 
-9) status tinyint(1) NOT NULL default '0',
-   Indica se story está "progress/ready" em fase de backlog ou "progress/done", em fase de sprint    switch ($status)
-  {
-    case OTD_NOTREADY:
-      $where = ' WHERE status = 0 ';
-      break;
-    case OTD_READY:
-      $where = ' WHERE status = 1 ';
-      break;
-    case OTD_INCOMING:
-      $where = ' WHERE status = 2 ';
-      break;
-    case OTD_DONE:
-      $where = ' WHERE status = 3 ';
-      break;
-    case OTD_ALL:
-    default:
-      $where = '';
-      break;
-  }  
+== Table Structure ==
 
-		
-10) priority tinyint(1) NOT NULL default '0',
-   0 = important
-   1 = normal
-   2 = low
-  		
-11) todotext text NOT NULL,
-  		
+1) id bigint(20) NOT NULL auto_increment: the entry id ( story, epic, theme )	
+2) idParent int(11) default NULL: parent id number, if it exists		
+3) sprintNumber int(11) default NULL: sprint number that will support the storie		
+4) points int(11) default NULL: story points		
+5) author bigint(20) NOT NULL default '0': story account id		
+6) att bigint(4) NOT NULL default '0': attendant id (scrum-master, p.o, team-member)	
+7) targetActors bigint(20) NOT NULL default '0': the target profile that will be 	
+8) tasktag bigint(4) NOT NULL default '0': it will show you if the entry is a '0 = story', '1 = epic', '2 = theme', '3 = task', '4 = project'
+9) status tinyint(1) NOT NULL default '0': this field is abble to show you if your story is  '0 = notready', '1 = ready', '2 = progress', '3 = has been done'		
+10) priority tinyint(1) NOT NULL default '0': '0 = important', '1 = normal', '2 = low'  		
+11) todotext text NOT NULL: The full entry description
+12) created_at datetime NOT NULL default '0000-00-00 00:00:00': The date that the entry has been created  		
+13) starts_in datetime NOT NULL default '0000-00-00 00:00:00': The date that the entry was submited to the sprint		
+14) ended_in datetime NOT NULL default '0000-00-00 00:00:00': The date that the entry has been doned
 
-
-created_at datetime NOT NULL default '0000-00-00 00:00:00',
-  		
-
-
-starts_in datetime NOT NULL default '0000-00-00 00:00:00',
-  		
-
-
-ended_in datetime NOT NULL default '0000-00-00 00:00:00',
-
-
-
-Roles and Capabilities
-
-	case 0:$user_role="subscriber";
-	break;
-	case 1:$user_role="contributor";
-	break;
-	case 2: case 3: case 4: $user_role="author";
-	break;
-	case 5: case 6: case 7: $user_role="editor";
-	break;
-	case 8: case 9: case 10: $user_role="administrator";
 
 
 
