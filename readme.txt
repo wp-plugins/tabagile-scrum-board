@@ -6,7 +6,9 @@ Requires at least: 2.0.2
 Tested up to: 2.1
 Stable tag: trunk
 
-A simple scrum board that helps you, as a Product Owner, to dealing with your stories, sprints and your team members.
+A simple scrum board that helps you, as a Product Owner, to dealing with your stories, sprints 
+
+and your team members.
 
 == Description ==
 
@@ -18,7 +20,9 @@ Tabagile Scrum Board 0.1 (alpha version), is a simple scrum board that will help
 2) Each member can see something what´s really important.
 3) WordPress Roles and Capabilities are in sinc with Scrum players:
 4) You can insert entryes as Stories, Epics, Themes, Tasks or Project
-5) Tabagile Scrum Board permits you to maintain the relationships between the entryes. That is, an Epic can be a parent category for a lot of stories, for example.
+5) Tabagile Scrum Board permits you to maintain the relationships between the entryes. That is, 
+
+an Epic can be a parent category for a lot of stories, for example.
 6) Set the stories as "Not-ready" or "Ready" and submit them to sprint. Trac it all. 
 
 Next alpha release features:
@@ -30,9 +34,7 @@ Next alpha release features:
 5) Attach files and documents to the entryes    
 6) Setup the title table names that will be shown in the product backlog list   
 
-
 Tabagile Scrum Board is a variant derived from Abstract Dimension's Todo List Plugin.
-
 
 == Installation ==
 
@@ -42,13 +44,13 @@ Tabagile Scrum Board is a variant derived from Abstract Dimension's Todo List Pl
 
 == Frequently Asked Questions ==
 
-== Screenshots ==
-
-1. screenshot-1.(png|jpg|jpeg|gif)
-
 == Changelog ==
 
 == Upgrade Notice ==
+
+== Screenshots ==
+
+1. screenshot-1.png
 
 == Roles and Capabilities ==
 
@@ -56,7 +58,9 @@ Tabagile Scrum Board is a variant derived from Abstract Dimension's Todo List Pl
 2) "contributor" = Team Member
 3) "author" = Team Member (that user can see your tasks in product backlog)
 4) "editor" = Scrum Master (can dealing with tasks and team members)
-5) "administrator" = Product Owner (can dealing with epics, stories, themes, projects and grant access for all team members)
+5) "administrator" = Product Owner (can dealing with epics, stories, themes, projects and grant 
+
+access for all team members)
 
 == Table Structure ==
 
@@ -67,7 +71,8 @@ Tabagile Scrum Board is a variant derived from Abstract Dimension's Todo List Pl
 5) author bigint(20) NOT NULL default '0': story account id		
 6) att bigint(4) NOT NULL default '0': attendant id (scrum-master, p.o, team-member)	
 7) targetActors bigint(20) NOT NULL default '0': the target profile that will be 	
-8) tasktag bigint(4) NOT NULL default '0': it will show you if the entry is a '0 = story', '1 = epic', '2 = theme', '3 = task', '4 = project'
+8) tasktag bigint(4) NOT NULL default '0': it will show you if the entry is a '0 = story', '1 = 
+epic', '2 = theme', '3 = task', '4 = project'
 9) status tinyint(1) NOT NULL default '0': this field is abble to show you if your story is  '0 = notready', '1 = ready', '2 = progress', '3 = has been done'		
 10) priority tinyint(1) NOT NULL default '0': '0 = important', '1 = normal', '2 = low'  		
 11) todotext text NOT NULL: The full entry description
