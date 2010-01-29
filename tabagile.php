@@ -2,7 +2,7 @@
 /*
 Plugin Name: Tabagile Scrum Board
 Plugin URI:
-Description: A simple scrum board that helps you in dealing with your stories, sprints and your team members. All members work as a team to manipulate the list under "Manage". A variant derived from AbstractDimension's Todo List Plugin.
+Description: A simple scrum board that helps you in deal with your stories, sprints and your team members. All members work as a team to manipulate the list under "Manage". A variant derived from AbstractDimension's Todo List Plugin.
 Version: 0.1 (alpha)
 Author: Maeka
 Author URI: http://www.twitter.com/ricardonm
