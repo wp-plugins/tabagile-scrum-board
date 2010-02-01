@@ -165,9 +165,6 @@ function otd_option_controller () {
         $starts_in = $_POST['otd_starts_in'];
         $ended_in = $_POST['otd_ended_in'];
 
-
-
-
         otd_insert($idParent, $sprintNumber, $points, $author, $att, $tasktag, $status, $priority, $todotext, $created_at, $starts_in, $ended_in);
 
         $otd_message = __('New Backlog Entry has been added.', 'otd');
