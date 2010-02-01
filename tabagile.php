@@ -1234,8 +1234,11 @@ if ($user_cap_ourtodo_admin) {
 	} else {
 	$sql = "SELECT id, att, author, todotext FROM " . $otd_tablename .
            "WHERE status < 4 and author = ". $current_user->ID.
-           "or att = ". $current_user->ID .
+           "or status < 4 and att = ". $current_user->ID .
            "ORDER BY priority,id LIMIT 10";
+
+
+
 
 				   echo '<div><h3>'.__('Your orders', 'otd').
 						' <!--a href="' . $otd_location . '">'.
