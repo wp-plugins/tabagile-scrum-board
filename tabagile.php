@@ -569,11 +569,12 @@ function otd_manage_panel()
     }
 
 
-    foreach ($id as $idP => $parent)
+    foreach ($idParent as $idP => $parent)
     {
         $selected = ($todo->id == $idP) ? 'selected="selected"' : '';
         $selection_idParent .= "  <option value=\"$idP\" $selected>{$parent}</option>\n";
     }
+
 
     foreach ($author as $idPo => $productOwner)
     {
