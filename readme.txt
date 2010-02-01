@@ -58,11 +58,11 @@ Tabagile Scrum Board is a variant derived from Abstract Dimension's Todo List Pl
 
 == Roles and Capabilities ==
 
-* "subscriber" = Client (that user can sugest stories directly in the product backlog, trough a public interface)
-* "contributor" = Team Member
-* "author" = Team Member (that user can see your tasks in product backlog)
-* "editor" = Scrum Master (can dealing with tasks and team members)
-* "administrator" = Product Owner (can dealing with epics, stories, themes, projects and grant access for all team members)
+* "subscriber" / role:0 = Client (that user can sugest stories directly in the product backlog, trough a public interface, and can follow entries created by himself)
+* "contributor" / role:1 = Team Member(that user can sugest stories directly in the product backlog, trough a public interface, and can follow entries created by himself)
+* "author" / role:2,3,4  = Team Member (that user can see your tasks in product backlog)
+* "editor" / role:5,6,7 = Scrum Master (can dealing with tasks and team members)
+* "administrator" / role:8,9,10 = Product Owner (can dealing with epics, stories, themes, projects and grant access for all team members)
 
 == Table Structure ==
 
