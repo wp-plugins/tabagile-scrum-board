@@ -479,7 +479,7 @@ function otd_manage_panel()
      	{
      		foreach ($results as $result)
      		{
-     			$idParent[$result->idParent] = $result->idParent;
+     			$idParent[$result->id] = $result->idParent;
      		}
      	}
 
@@ -510,7 +510,7 @@ function otd_manage_panel()
      	{
      		foreach ($results as $result)
      		{
-     			$author[$result->ID] = $result->user_nicename;
+     			$author[$result->id] = $result->user_nicename;
      		}
      	}
 
@@ -564,13 +564,11 @@ function otd_manage_panel()
     }
 
 
-    $selection_idParent = '';
-    for ($g = 0; $g < count($idParent); $g++)
+    foreach ($idParent as $idPar => $parent)
     {
-        $selected = ($todo->idParent == $g) ? 'selected="selected"' : '';
-        $selection_idParent .= "  <option value=\"$g\" $selected>{$idParent[$g]}</option>\n";
+        $selected = ($todo->sprintNumber == $idPar) ? 'selected="selected"' : '';
+        $selection_idParent .= "  <option value=\"$idPar\" $selected>{$parent}</option>\n";
     }
-
 
 
     foreach ($author as $idPo => $productOwner)
