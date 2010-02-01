@@ -42,6 +42,8 @@ Tabagile Scrum Board is a variant derived from Abstract Dimension's Todo List Pl
 
 == Frequently Asked Questions ==
 
+1. 
+
 == Changelog ==
 
 0.1 Tasks On user sign in
@@ -75,7 +77,7 @@ Tabagile Scrum Board is a variant derived from Abstract Dimension's Todo List Pl
 7. targetActors bigint(20) NOT NULL default '0': the target profile that will be 	
 8. tasktag bigint(4) NOT NULL default '0': it will show you if the entry is a '0 = story', '1 = 
 epic', '2 = theme', '3 = task', '4 = project'
-9. status tinyint(1) NOT NULL default '0': this field is abble to show you if your story is  '0 = notready', '1 = ready', '2 = progress', '3 = has been done'		
+9. status tinyint(1) NOT NULL default '0': this field is abble to show you if your story is  '0 = notset', '1 = notready' '2 = ready', '3 = progress', '4 = has been done'		
 10. priority tinyint(1) NOT NULL default '0': '0 = important', '1 = normal', '2 = low'  		
 11. todotext text NOT NULL: The full entry description
 12. created_at datetime NOT NULL default '0000-00-00 00:00:00': The date that the entry has been created 	

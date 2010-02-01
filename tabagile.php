@@ -904,8 +904,7 @@ function otd_manage_panel()
 
 	get_currentuserinfo();
 
-   $sql = "SELECT id, idParent, sprintNumber, points, author, att, tasktag, status, priority, todotext, created_at FROM ".
-          $otd_tablename . " WHERE status <= 1 ORDER BY priority";
+   $sql = "SELECT id, idParent, sprintNumber, points, author, att, tasktag, status, priority, todotext, created_at FROM ".$otd_tablename . " WHERE status <= 0 and status <= 2  ORDER BY priority";
    $results = $wpdb->get_results($sql);
    if ($results)
    {
