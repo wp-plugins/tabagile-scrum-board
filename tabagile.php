@@ -519,25 +519,28 @@ function otd_manage_panel()
 
 
     $priority = array(
-                  0 => __('important', 'otd'),
-                  1 => __('normal', 'otd'),
-                  2 => __('low', 'otd')
+                  0 => __('not set', 'otd'),
+                  1 => __('important', 'otd'),
+                  2 => __('normal', 'otd'),
+                  3 => __('low', 'otd')
               );
 
 
     $tasktag = array(
-                  0 => __('story', 'otd'),
-                  1 => __('epic', 'otd'),
-                  2 => __('theme', 'otd'),
-                  3 => __('project', 'otd'),
-                  3 => __('task', 'otd')
+                  0 => __('not set', 'otd'),
+                  1 => __('story', 'otd'),
+                  2 => __('epic', 'otd'),
+                  3 => __('theme', 'otd'),
+                  4 => __('project', 'otd'),
+                  5 => __('task', 'otd')
               );
 
     $status = array(
-                  0 => __('notready', 'otd'),
-                  1 => __('ready', 'otd'),
-                  2 => __('running', 'otd'),
-                  3 => __('done', 'otd')
+                  0 => __('not set', 'otd'),
+                  1 => __('notready', 'otd'),
+                  2 => __('ready', 'otd'),
+                  3 => __('running', 'otd'),
+                  4 => __('done', 'otd')
               );
 
 ?>
