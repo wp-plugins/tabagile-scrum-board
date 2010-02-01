@@ -553,7 +553,6 @@ function otd_manage_panel()
     $todo = otd_get_todo($id);
 
     $selection_att = '';
-    $selection_idParent = '';
     $selection_author = '';
     $selection_sprintNumber = '';
 
@@ -565,11 +564,13 @@ function otd_manage_panel()
     }
 
 
-    foreach ($idParent as $idP => $parent)
+    $selection_idParent = '';
+    for ($g = 0; $g < count($idParent); $g++)
     {
-        $selected = ($todo->id == $parent) ? 'selected="selected"' : '';
-        $selection_idParent .= "  <option value=\"$parent\" $selected>{$parent}</option>\n";
+        $selected = ($todo->idParent == $g) ? 'selected="selected"' : '';
+        $selection_idParent .= "  <option value=\"$g\" $selected>{$idParent[$g]}</option>\n";
     }
+
 
 
     foreach ($author as $idPo => $productOwner)
