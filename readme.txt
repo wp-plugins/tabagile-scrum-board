@@ -65,7 +65,7 @@ CREATE TABLE wp_tabagile (
 
 == Changelog ==
 
-0.1. On user sign-in, all the Entries  now will be showed since the user    
+0.1. On user sign-in, all the Entries both where the current user are author or scrum master now will be showed since the user    
 
 == Upgrade Notice ==
 
