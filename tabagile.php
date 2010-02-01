@@ -795,7 +795,7 @@ function otd_manage_panel()
 
 <?php
    $sql = "SELECT id, idParent, author, att, tasktag, status, priority, todotext, created_at, starts_in FROM ".
-          $otd_tablename . " WHERE status = 2 ORDER BY priority, todotext";
+          $otd_tablename . " WHERE status = 3 ORDER BY priority, todotext";
    $results = $wpdb->get_results($sql);
 
  	global $current_user;
@@ -1118,6 +1118,7 @@ function otd_manage_panel()
         <option value='2'><?php _e('epic', 'otd'); ?></option>
         <option value='3'><?php _e('theme', 'otd'); ?></option>
         <option value='4'><?php _e('project', 'otd'); ?></option>
+        <option value='5'><?php _e('task', 'otd'); ?></option>
         </select>
         </p>
 
