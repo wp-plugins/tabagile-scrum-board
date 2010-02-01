@@ -794,8 +794,7 @@ function otd_manage_panel()
 
 
 <?php
-   $sql = "SELECT id, idParent, author, att, tasktag, status, priority, todotext, created_at, starts_in FROM ".
-          $otd_tablename . " WHERE status = 3 ORDER BY priority, todotext";
+   $sql = "SELECT id, idParent, author, att, tasktag, status, priority, todotext, created_at, starts_in FROM ".$otd_tablename . " WHERE status = 3 ORDER BY priority, todotext";
    $results = $wpdb->get_results($sql);
 
  	global $current_user;
