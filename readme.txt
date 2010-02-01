@@ -58,31 +58,31 @@ Tabagile Scrum Board is a variant derived from Abstract Dimension's Todo List Pl
 
 == Roles and Capabilities ==
 
-1) "subscriber" = Client (that user can sugest stories directly in the product backlog, trough a public interface)
-2) "contributor" = Team Member
-3) "author" = Team Member (that user can see your tasks in product backlog)
-4) "editor" = Scrum Master (can dealing with tasks and team members)
-5) "administrator" = Product Owner (can dealing with epics, stories, themes, projects and grant 
+* "subscriber" = Client (that user can sugest stories directly in the product backlog, trough a public interface)
+* "contributor" = Team Member
+* "author" = Team Member (that user can see your tasks in product backlog)
+* "editor" = Scrum Master (can dealing with tasks and team members)
+* "administrator" = Product Owner (can dealing with epics, stories, themes, projects and grant 
 
 access for all team members)
 
 == Table Structure ==
 
-1) id bigint(20) NOT NULL auto_increment: the entry id ( story, epic, theme )	
-2) idParent int(11) default NULL: parent id number, if it exists		
-3) sprintNumber int(11) default NULL: sprint number that will support the storie		
-4) points int(11) default NULL: story points		
-5) author bigint(20) NOT NULL default '0': story account id		
-6) att bigint(4) NOT NULL default '0': attendant id (scrum-master, p.o, team-member)	
-7) targetActors bigint(20) NOT NULL default '0': the target profile that will be 	
-8) tasktag bigint(4) NOT NULL default '0': it will show you if the entry is a '0 = story', '1 = 
+1. id bigint(20) NOT NULL auto_increment: the entry id ( story, epic, theme )	
+2. idParent int(11) default NULL: parent id number, if it exists		
+3. sprintNumber int(11) default NULL: sprint number that will support the storie		
+4. points int(11) default NULL: story points		
+5. author bigint(20) NOT NULL default '0': story account id		
+6. att bigint(4) NOT NULL default '0': attendant id (scrum-master, p.o, team-member)	
+7. targetActors bigint(20) NOT NULL default '0': the target profile that will be 	
+8. tasktag bigint(4) NOT NULL default '0': it will show you if the entry is a '0 = story', '1 = 
 epic', '2 = theme', '3 = task', '4 = project'
-9) status tinyint(1) NOT NULL default '0': this field is abble to show you if your story is  '0 = notready', '1 = ready', '2 = progress', '3 = has been done'		
-10) priority tinyint(1) NOT NULL default '0': '0 = important', '1 = normal', '2 = low'  		
-11) todotext text NOT NULL: The full entry description
-12) created_at datetime NOT NULL default '0000-00-00 00:00:00': The date that the entry has been created  		
-13) starts_in datetime NOT NULL default '0000-00-00 00:00:00': The date that the entry was submited to the sprint		
-14) ended_in datetime NOT NULL default '0000-00-00 00:00:00': The date that the entry has been doned
+9. status tinyint(1) NOT NULL default '0': this field is abble to show you if your story is  '0 = notready', '1 = ready', '2 = progress', '3 = has been done'		
+10. priority tinyint(1) NOT NULL default '0': '0 = important', '1 = normal', '2 = low'  		
+11. todotext text NOT NULL: The full entry description
+12. created_at datetime NOT NULL default '0000-00-00 00:00:00': The date that the entry has been created 	
+13. starts_in datetime NOT NULL default '0000-00-00 00:00:00': The date that the entry was submited to the sprint		
+14. ended_in datetime NOT NULL default '0000-00-00 00:00:00': The date that the entry has been doned
 
 
 
