@@ -16,21 +16,21 @@ Tabagile Scrum Board 0.1 (alpha version), is a simple scrum board that will help
 
 0.1 alpha features:
 
-1) All members work as a team to manipulate the list under "Manage". 
-2) Each member can see what's really important.
-3) Scrum players are in Sync with WordPress Roles and Capabilities.
-4) You can insert entries as Stories, Epics, Themes, Tasks or Project
-5) Tabagile Scrum Board permits you to maintain the relationships between the entryes. That is, an Epic can be a parent category for a lot of stories, for example.
-6) Set the stories as "Not-ready" or "Ready" and submit them to sprint. Trac it all. 
+*1) All members work as a team to manipulate the list under "Manage". 
+*2) Each member can see what's really important.
+*3) Scrum players are in Sync with WordPress Roles and Capabilities.
+*4) You can insert entries as Stories, Epics, Themes, Tasks or Project
+*5) Tabagile Scrum Board permits you to maintain the relationships between the entryes. That is, an Epic can be a parent category for a lot of stories, for example.
+*6) Set the stories as "Not-ready" or "Ready" and submit them to sprint. Trac it all. 
 
 Next alpha release features:
 
-1) Entries pagination and a "sort by" the table title names.
-2) View the entries according by the relationship beetween them(parents and children nodes).  
-3) Request for approval using e-mail on changing the entry status.
-4) Visualize the graphs for "release burn-down", "sprint burn-down".
-5) Attach files and documents to the entries    
-6) Setup the title table names that will be shown in the product backlog list   
+*1) Entries pagination and a "sort by" the table title names.
+*2) View the entries according by the relationship beetween them(parents and children nodes).  
+*3) Request for approval using e-mail on changing the entry status.
+*4) Visualize the graphs for "release burn-down", "sprint burn-down".
+*5) Attach files and documents to the entries    
+*6) Setup the title table names that will be shown in the product backlog list   
 
 Tabagile Scrum Board is a variant derived from Abstract Dimension's Todo List Plugin.
 
