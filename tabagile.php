@@ -479,7 +479,7 @@ function otd_manage_panel()
      	{
      		foreach ($results as $result)
      		{
-     			$idParent[$result->id] = $result->idParent;
+     			$idParent[$result->id] = $result->id;
      		}
      	}
 
