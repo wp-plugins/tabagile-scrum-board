@@ -156,12 +156,11 @@ function otd_option_controller () {
 		$sprintNumber = $_POST['otd_sprintNumber'];
 		$points = $_POST['otd_points'];
 		$author = $_POST['otd_author'];
-
+		$att = $_POST['otd_att'];
         $tasktag = $_POST['otd_tasktag'];
         $status = $_POST['otd_status'];
 	    $priority = $_POST['otd_priority'];
         $todotext = $_POST['otd_description'];
-
         $created_at = $_POST['otd_created_at'];
         $starts_in = $_POST['otd_starts_in'];
         $ended_in = $_POST['otd_ended_in'];
@@ -1150,6 +1149,8 @@ function otd_manage_panel()
         <p class="submit">
 
           <input type="hidden" name="otd_created_at" value="<?php printf(__('%2$s'), $current_offset_name, date_i18n(__('Y-m-d G:i:s'))); ?>" />
+          <input name="otd_starts_in" type="hidden" style="width:37%;" value="0000-00-00 00:00:00">
+          <input name="otd_ended_in" type="hidden" style="width:37%;" value="0000-00-00 00:00:00">
           <input type="hidden" name="otd_action" value="addBacklog" />
           <input type="submit" name="submit" value="<?php _e('Add Backlog &raquo;', 'otd') ?>" />
         </p>
