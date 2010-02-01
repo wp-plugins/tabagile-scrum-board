@@ -6,9 +6,7 @@ Requires at least: 2.0.2
 Tested up to: 2.1
 Stable tag: 0.1
 
-A simple scrum board that helps you, as a Product Owner, to deal with your stories, sprints 
-
-and your team members.
+A simple scrum board that helps you, as a Product Owner, to deal with your stories, sprints and your team members.
 
 == Description ==
 
@@ -44,7 +42,6 @@ Tabagile Scrum Board is a variant derived from Abstract Dimension's Todo List Pl
 
 = I have activated the plugin with success but when i add a new entry, nothing happens. = 
 
-
 Somethimes, depending on your database security options, the Tabagile Plugin can not create a new table in your wordpress database. In this case, you can create it manualy. Just run the following sql statement to create the Tabagile table:
 
 CREATE TABLE wp_tabagile (
@@ -68,7 +65,7 @@ CREATE TABLE wp_tabagile (
 
 == Changelog ==
 
-0.1 Tasks On user sign in
+0.1. On user sign-in, all the Entries  now will be showed since the user    
 
 == Upgrade Notice ==
 
