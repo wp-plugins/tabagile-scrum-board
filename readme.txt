@@ -62,9 +62,7 @@ Tabagile Scrum Board is a variant derived from Abstract Dimension's Todo List Pl
 * "contributor" = Team Member
 * "author" = Team Member (that user can see your tasks in product backlog)
 * "editor" = Scrum Master (can dealing with tasks and team members)
-* "administrator" = Product Owner (can dealing with epics, stories, themes, projects and grant 
-
-access for all team members)
+* "administrator" = Product Owner (can dealing with epics, stories, themes, projects and grant access for all team members)
 
 == Table Structure ==
 
