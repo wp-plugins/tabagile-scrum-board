@@ -54,11 +54,6 @@ function otd_runinclude ()
     }
 }
 
-//run a task
-// if($_GET['otd_action'] == 'incoming'){
-// otd_incoming ($id=$_GET['id'], 2);
-// }
-
 
 if ( function_exists('add_action') )
 {
@@ -171,6 +166,9 @@ function otd_option_controller () {
         $starts_in = $_POST['otd_starts_in'];
         $ended_in = $_POST['otd_ended_in'];
 
+
+
+
         otd_insert($idParent, $sprintNumber, $points, $author, $att, $tasktag, $status, $priority, $todotext, $created_at, $starts_in, $ended_in);
 
         $otd_message = __('New Backlog Entry has been added.', 'otd');
@@ -192,9 +190,6 @@ function otd_controller ()
     switch ($otd_action)
     {
         case 'addBacklog':
-
-
-
         $idParent = $_POST['otd_idParent'];
         $sprintNumber = $_POST['otd_sprintNumber'];
         $points = $_POST['otd_points'];
@@ -283,18 +278,18 @@ function otd_controller ()
    }
 }
 
-function otd_insert ($idParent, $sprintNumber, $points, $author, $att, $tasktag, $priority, $status, $todotext, $created_at)
+function otd_insert ($idParent, $sprintNumber, $points, $author, $att, $tasktag, $priority, $status, $todotext, $created_at, $starts_in, $ended_in)
 {
     global $otd_tablename, $wpdb, $userdata;
     get_currentuserinfo();
 
     $insert = "INSERT INTO $otd_tablename ".
-              "(idParent, sprintNumber, points, author, att, tasktag, status, priority, todotext, created_at) ".
-              "VALUES ($idParent, $sprintNumber, $points, $userdata->ID, $att, '$tasktag', $status, $priority, '$todotext','$created_at')";
+              "(idParent, sprintNumber, points, author, att, tasktag, status, priority, todotext, created_at, starts_in, ended_in) ".
+              "VALUES ($idParent, $sprintNumber, $points, $userdata->ID, $att, $tasktag, $status, $priority, '$todotext','$created_at', '$starts_in','$ended_in')";
     $results = $wpdb->query( $insert );
 }
 
-function otd_update ($id, $idParent, $sprintNumber, $points, $author, $att, $tasktag, $priority, $status, $todotext, $created_at, $starts_in, $starts_end)
+function otd_update ($id, $idParent, $sprintNumber, $points, $author, $att, $tasktag, $priority, $status, $todotext, $created_at, $starts_in, $ended_in)
 {
     global $otd_tablename, $wpdb, $userdata;
     get_currentuserinfo();
@@ -560,15 +555,10 @@ function otd_manage_panel()
 
     $todo = otd_get_todo($id);
 
-
-
-
-
     $selection_att = '';
     $selection_idParent = '';
     $selection_author = '';
     $selection_sprintNumber = '';
-
 
 
     foreach ($att as $id => $attendant)
