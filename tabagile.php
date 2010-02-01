@@ -549,11 +549,7 @@ function otd_manage_panel()
 <?php
  if($_GET['otd_action'] == 'edittd')
  {
-
-
-
     $id = $_GET['id'];
-
     $todo = otd_get_todo($id);
 
     $selection_att = '';
@@ -571,8 +567,8 @@ function otd_manage_panel()
 
     foreach ($idParent as $idP => $parent)
     {
-        $selected = ($todo->id == $idP) ? 'selected="selected"' : '';
-        $selection_idParent .= "  <option value=\"$idP\" $selected>{$parent}</option>\n";
+        $selected = ($todo->id == $parent) ? 'selected="selected"' : '';
+        $selection_idParent .= "  <option value=\"$parent\" $selected>{$parent}</option>\n";
     }
 
 
