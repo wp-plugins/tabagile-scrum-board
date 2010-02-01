@@ -567,7 +567,7 @@ function otd_manage_panel()
     foreach ($idParent as $idPar => $parent)
     {
         $selected = ($todo->idParent == $idPar) ? 'selected="selected"' : '';
-        $selection_idParent .= "  <option value=\"$idPar\" $selected>{$parent}</option>\n";
+        $selection_idParent .= "  <option value='0'>0</option><option value=\"$idPar\" $selected>{$parent}</option>\n";
     }
 
 
