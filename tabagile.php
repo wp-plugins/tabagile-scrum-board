@@ -283,7 +283,7 @@ function otd_controller ()
    }
 }
 
-function otd_insert ($idParent, $sprintNumber, $points, $author, $att, $tasktag, $priority, $status, $todotext, $created_at, $starts_in, $starts_end)
+function otd_insert ($idParent, $sprintNumber, $points, $author, $att, $tasktag, $priority, $status, $todotext, $created_at)
 {
     global $otd_tablename, $wpdb, $userdata;
     get_currentuserinfo();
@@ -1240,7 +1240,9 @@ if ($user_cap_ourtodo_admin) {
          __('New Todo &raquo;', 'otd').'</a></p></div>';
 	} else {
 	$sql = "SELECT id, att, author, todotext FROM " . $otd_tablename .
-          " WHERE status < 3 and author = ". $current_user->ID." and att = ". $current_user->ID ."  ORDER BY priority,id LIMIT 10";
+          " WHERE status < 3 and author = ". $current_user->ID.
+          " or att = ". $current_user->ID .
+          "  ORDER BY priority,id LIMIT 10";
 
 				   echo '<div><h3>'.__('Your orders', 'otd').
 						' <!--a href="' . $otd_location . '">'.
