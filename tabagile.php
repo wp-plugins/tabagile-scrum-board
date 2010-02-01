@@ -208,7 +208,8 @@ function otd_controller ()
 
         case 'comptd':
         $id = $_GET['id'];
-        otd_complete($id, '1');
+        $status = $_GET['status'];
+        otd_complete($id, $status);
         $otd_message = __('Story has been marked completed.', 'otd');
         break;
 
@@ -821,7 +822,7 @@ function otd_manage_panel()
 
        echo "<tr id=\"otd-{$result->id}\" class=\"$class\">
        <td width=\"1%\" ><input type=\"checkbox\" id=\"td-{$result->id}\"
-       onclick=\"window.location='$otd_location&otd_action=comptd&id=$result->id';\" /></td>
+       onclick=\"window.location='$otd_location&otd_action=comptd&status=4&id=$result->id';\" /></td>
 
 	   <td>#{$result->id}</td>
 	   <td>#{$idParent_str}</td>
@@ -904,7 +905,7 @@ function otd_manage_panel()
 
 	get_currentuserinfo();
 
-   $sql = "SELECT id, idParent, sprintNumber, points, author, att, tasktag, status, priority, todotext, created_at FROM ".$otd_tablename . " WHERE status <= 0 and status <= 2  ORDER BY priority";
+   $sql = "SELECT id, idParent, sprintNumber, points, author, att, tasktag, status, priority, todotext, created_at FROM ".$otd_tablename." WHERE status <= 2  ORDER BY priority";
    $results = $wpdb->get_results($sql);
    if ($results)
    {
@@ -933,7 +934,7 @@ function otd_manage_panel()
 
        echo "<tr id=\"otd-{$result->id}\" class=\"$class\">
        <td width=\"1%\" ><input type=\"checkbox\" id=\"td-{$result->id}\"
-       onclick=\"window.location='$otd_location&otd_action=incoming&status=2&id=$result->id';\" /></td>
+       onclick=\"window.location='$otd_location&otd_action=incoming&status=3&id=$result->id';\" /></td>
 
 
 	   <td>#{$result->id}</td>
@@ -1011,7 +1012,8 @@ function otd_manage_panel()
 
 
 <?php
-   $sql = "SELECT id, author, att, tasktag, status, priority, todotext, starts_in, ended_in FROM ". $otd_tablename . " WHERE status = 3 ORDER BY ended_in";
+   $sql = "SELECT id, author, att, tasktag, status, priority, todotext, starts_in, ended_in FROM ".
+   $otd_tablename . " WHERE status = 4 ORDER BY ended_in";
    $results = $wpdb->get_results($sql);
 
 	function subtract_dates($begin_date, $end_date)
@@ -1038,7 +1040,7 @@ function otd_manage_panel()
 
        echo "<tr id=\"otd-$result->id\" class=\"$class\">
        <td width=\"1%\"><input type=\"checkbox\" id=\"td-{$result->id}\" checked=\"checked\"
-       onclick=\"window.location = '$otd_location&amp;otd_action=uncomptd&amp;id=$result->id';\" /></td>
+       onclick=\"window.location = '$otd_location&status=3&otd_action=uncomptd&id=$result->id';\" /></td>
 
 
  	   <td>#{$result->id}</td>
@@ -1057,7 +1059,7 @@ function otd_manage_panel()
    }
    else
    {
-     echo '<tr><td colspan="4">'.__('There are no completed tasks.', 'otd').'</td></tr>';
+     echo $sql.'<tr><td colspan="4">'.__('There are no completed tasks.', 'otd').'</td></tr>';
    }
 ?>
    </tbody>
