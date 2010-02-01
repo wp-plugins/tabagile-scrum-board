@@ -206,30 +206,6 @@ function otd_controller ()
 		$todotext = $_POST['otd_description'];
         $created_at = $_POST['otd_created_at'];
 
-
-
-		//echo $idParent;
-		//echo '<br/>';
-		//echo $sprintNumber;
-		//echo '<br/>';
-		//echo $points;
-		//echo '<br/>';
-		//echo $author;
-		//echo '<br/>';
-		//echo $att;
-		//echo '<br/>';
-		//echo $tasktag;
-		//echo '<br/>';
-		//echo $priority;
-		//echo '<br/>';
-		//echo $status;
-		//echo '<br/>';
-		//echo $todotext;
-		//echo '<br/>';
-		//echo $created_at;
-		//echo '<br/>';
-
-
 	    otd_insert($idParent, $sprintNumber, $points, $author, $att, $tasktag, $priority, $status, $todotext, $created_at);
         $otd_message = __('New Backlog Entry has been added.', 'otd');
         break;
@@ -240,7 +216,6 @@ function otd_controller ()
         $otd_message = __('Story has been marked completed.', 'otd');
         break;
 
-/*  rarararrararararararar  */
         case 'incoming':
         $id = $_GET['id'];
         $status = $_GET['status'];
@@ -286,30 +261,9 @@ function otd_controller ()
         $starts_in = $_POST['otd_starts_in'];
         $ended_in = $_POST['otd_ended_in'];
 
-
-
-        // echo "id: $id<br/>";
-        // echo "parent: $idParent<br/>";
-        // echo "sprint: $sprintNumber<br/>";
-        // echo "pontos: $points<br/>";
-        // echo "autor: $author<br/>";
-        // echo "srum: $att<br/>";
-        // echo "tipo entrada: $tasktag<br/>";
-        // echo "status: $status<br/>";
-        // echo "prioridade: $priority<br/>";
-        // echo "descrição: $todotext<br/>";
-        // echo "criado em: $created_at<br/>";
-        // echo "inicio em: $starts_in<br/>";
-        // echo "finalizado em: $ended_in<br/>";
-
-
-
-
-
         otd_update($id, $idParent, $sprintNumber, $points, $author, $att, $tasktag, $status, $priority, $todotext, $created_at, $starts_in, $ended_in);
         $otd_message = __('Story has been updated.', 'otd');
         break;
-
 
         case 'setuptd':
         otd_activate();
