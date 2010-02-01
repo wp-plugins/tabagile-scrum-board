@@ -42,7 +42,28 @@ Tabagile Scrum Board is a variant derived from Abstract Dimension's Todo List Pl
 
 == Frequently Asked Questions ==
 
-1. 
+1. q: I have activated the plugin with success but when i add a new entry, nothing happens. 
+
+   a: somethimes, depending on your database security options, the Tabagile Plugin can´t create a new table in your wordpress database. In this case, you can create it manualy. Just run the following sql statement to create the Tabagile table:
+
+CREATE TABLE wp_tabagile (
+  		id bigint(20) NOT NULL auto_increment,
+  		idParent int(11) default NULL,
+  		sprintNumber int(11) default NULL,
+  		points int(11) default NULL,
+  		author bigint(20) NOT NULL default '0',
+  		att bigint(4) NOT NULL default '0',
+  		targetActors bigint(20) NOT NULL default '0',
+  		tasktag bigint(4) NOT NULL default '0',
+  		status tinyint(1) NOT NULL default '0',
+  		priority tinyint(1) NOT NULL default '0',
+  		todotext text NOT NULL,
+  		created_at datetime NOT NULL default '0000-00-00 00:00:00',
+  		starts_in datetime NOT NULL default '0000-00-00 00:00:00',
+  		ended_in datetime NOT NULL default '0000-00-00 00:00:00',
+  		UNIQUE KEY id (id)
+        ); 
+
 
 == Changelog ==
 
