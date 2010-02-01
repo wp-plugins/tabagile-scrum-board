@@ -199,8 +199,10 @@ function otd_controller ()
 	    $status = $_POST['otd_status'];
 		$todotext = $_POST['otd_description'];
         $created_at = $_POST['otd_created_at'];
+        $starts_in = $_POST['otd_starts_in'];
+        $ended_in = $_POST['otd_ended_in'];
 
-	    otd_insert($idParent, $sprintNumber, $points, $author, $att, $tasktag, $priority, $status, $todotext, $created_at);
+	    otd_insert($idParent, $sprintNumber, $points, $author, $att, $tasktag, $priority, $status, $todotext, $created_at, $starts_in, $ended_in);
         $otd_message = __('New Backlog Entry has been added.', 'otd');
         break;
 
@@ -283,7 +285,7 @@ function otd_insert ($idParent, $sprintNumber, $points, $author, $att, $tasktag,
     get_currentuserinfo();
 
     $insert = "INSERT INTO $otd_tablename ".
-              "(idParent, sprintNumber, points, author, att, tasktag, status, priority, todotext, created_at, starts_in, ended_in) ".
+              "(idParent, sprintNumber, points, author, att, tasktag, status, priority, todotext, created_at, starts_in, ended_in)".
               "VALUES ($idParent, $sprintNumber, $points, $userdata->ID, $att, $tasktag, $status, $priority, '$todotext','$created_at', '$starts_in','$ended_in')";
     $results = $wpdb->query( $insert );
 }
@@ -1071,17 +1073,17 @@ function otd_manage_panel()
 
     	<p>
 		<?php _e('Parent ID:', 'otd') ?><br />
-        <input type="text" name="otd_idParent" class='postform'>
+        <input type="text" name="otd_idParent" class='postform' value="0">
     	</p>
 
     	<p>
 		<?php _e('Sprint Number:', 'otd') ?><br />
-        <input type="text" name="otd_sprintNumber" class='postform'>
+        <input type="text" name="otd_sprintNumber" class='postform' value="0">
     	</p>
 
      	<p>
  		<?php _e('Points:', 'otd') ?><br />
-        <input type="text" name="otd_points" class='postform'>
+        <input type="text" name="otd_points" class='postform' value="0">
     	</p>
 
 
@@ -1090,7 +1092,7 @@ function otd_manage_panel()
 
 		<!--// monta dropdown com os usuários-->
         <select name='otd_att' class='postform'>
-        <option value='select_one'><?php _e('select one', 'otd'); ?></option>
+        <option value='0'><?php _e('select one', 'otd'); ?></option>
 		<?php
     	$sql = "SELECT * FROM ". $otd_tablename_users;
 		$results = $wpdb->get_results($sql);
@@ -1111,32 +1113,32 @@ function otd_manage_panel()
         <p>
 		<?php _e('Entry Type:', 'otd') ?><br />
         <select name='otd_tasktag' class='postform'>
-        <option value='select_one'><?php _e('select one', 'otd'); ?></option>
-        <option value='0'><?php _e('story', 'otd'); ?></option>
-        <option value='1'><?php _e('epic', 'otd'); ?></option>
-        <option value='2'><?php _e('theme', 'otd'); ?></option>
-        <option value='3'><?php _e('project', 'otd'); ?></option>
+        <option value='0'><?php _e('select one', 'otd'); ?></option>
+        <option value='1'><?php _e('story', 'otd'); ?></option>
+        <option value='2'><?php _e('epic', 'otd'); ?></option>
+        <option value='3'><?php _e('theme', 'otd'); ?></option>
+        <option value='4'><?php _e('project', 'otd'); ?></option>
         </select>
         </p>
 
         <p>
 		<?php _e('Priority:', 'otd') ?><br />
         <select name='otd_priority' class='postform'>
-        <option value='select_one'><?php _e('select one', 'otd'); ?></option>
-        <option value='0'><?php _e('important', 'otd'); ?></option>
-        <option value='1' selected="selected"><?php _e('normal', 'otd'); ?></option>
-        <option value='2'><?php _e('low', 'otd'); ?></option>
+        <option value='0'><?php _e('select one', 'otd'); ?></option>
+        <option value='1'><?php _e('important', 'otd'); ?></option>
+        <option value='2' selected="selected"><?php _e('normal', 'otd'); ?></option>
+        <option value='3'><?php _e('low', 'otd'); ?></option>
         </select>
         </p>
 
         <p>
 		<?php _e('Status:', 'otd') ?><br />
         <select name='otd_status' class='postform'>
-        <option value='select_one'><?php _e('select one', 'otd'); ?></option>
-        <option value='0' selected="selected"><?php _e('notready', 'otd'); ?></option>
-        <option value='1'><?php _e('ready', 'otd'); ?></option>
-        <option value='2'><?php _e('incoming', 'otd'); ?></option>
-        <option value='3'><?php _e('done', 'otd'); ?></option>
+        <option value='0'><?php _e('select one', 'otd'); ?></option>
+        <option value='1' selected="selected"><?php _e('notready', 'otd'); ?></option>
+        <option value='2'><?php _e('ready', 'otd'); ?></option>
+        <option value='3'><?php _e('incoming', 'otd'); ?></option>
+        <option value='4'><?php _e('done', 'otd'); ?></option>
         </select>
         </p>
 
